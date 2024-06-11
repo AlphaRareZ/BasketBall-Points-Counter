@@ -1,4 +1,5 @@
 // ignore: camel_case_types
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -44,113 +45,121 @@ class _pointsCounterState extends State<pointsCounter> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          IntrinsicHeight(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // column for team a
-                Column(
-                  children: [
-                    const Text(
-                      "Team A",
-                      style: TextStyle(fontSize: 32),
-                    ),
-                    Text(
-                      teamAScore.toString(),
-                      style: const TextStyle(fontSize: 150),
-                    ),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(1, 0);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 1 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(2, 0);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 2 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(3, 0);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 3 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                  ],
-                ),
-                const VerticalDivider(
-                  color: Colors.grey,
-                ),
-                // column for team b
-                Column(
-                  children: [
-                    const Text(
-                      "Team B",
-                      style: TextStyle(fontSize: 32),
-                    ),
-                    Text(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // column for team a
+              Column(
+                children: [
+                  const Text(
+                    "Team A",
+                    style: TextStyle(fontSize: 32),
+                  ),
+                  SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: AutoSizeText(teamAScore.toString(),
+                        style: const TextStyle(fontSize: 150),
+                        maxLines: 1,
+                        textAlign: TextAlign.center),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(1, 0);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 1 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(2, 0);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 2 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(3, 0);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 3 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                ],
+              ),
+              const VerticalDivider(
+                color: Colors.grey,
+              ),
+              // column for team b
+              Column(
+                children: [
+                  const Text(
+                    "Team B",
+                    style: TextStyle(fontSize: 32),
+                  ),
+                  SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: AutoSizeText(
                       teamBScore.toString(),
                       style: const TextStyle(fontSize: 150),
+                      maxLines: 1,
+                      textAlign: TextAlign.center,
                     ),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(1, 1);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 1 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(2, 1);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 2 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            addPoint(3, 1);
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        child: const Text(
-                          "Add 3 Point",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        )),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(1, 1);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 1 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(2, 1);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 2 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          addPoint(3, 1);
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange),
+                      child: const Text(
+                        "Add 3 Point",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )),
+                ],
+              ),
+            ],
           ),
           ElevatedButton(
               onPressed: () {
